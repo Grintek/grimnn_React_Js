@@ -3,11 +3,12 @@ import Article from './Article'
 
 
 export default function ArticleList({ articles }){
+    const articleElement = articles.map(article =>
+        <li key={article.id}><Article article = {article}/></li>
+    );
     return(
         <ul>
-            <li><Article article = {articles[0]}/></li>
-            <li><Article article = {articles[1]}/></li>
-            <li><Article article = {articles[2]}/></li>
+            {articleElement}
         </ul>
     )
 }
